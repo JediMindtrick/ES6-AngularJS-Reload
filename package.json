@@ -9,6 +9,11 @@
         "method-override": "*"
     },
     "scripts": {
-        "start": "supervisor -e 'html|js' node app.js"
+        "compile": "6to5 shared --out-dir serverDist --source-maps-inline && 6to5 shared --out-dir spa/clientDist --source-maps-inline && 6to5 server --out-dir serverDist --source-maps-inline && 6to5 client --out-dir spa/clientDist --source-maps-inline",
+        "serve": "node app.js",
+        "compileAndServe": "npm run compile && npm run serve",
+        "start:all": "supervisor -e 'html|js' npm run compileAndServe",
+        "start": "npm run compileAndServe",
+        "watch": "supervisor -i 'serverDist,spa/clientDist' -x npm -e 'html|js' npm start"
     }
 }
