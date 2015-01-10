@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     watch:   {
       scripts: {
         files: ['**/*.js','**/*.html','**/*.css'],
-        tasks: ['clean','6to5','express:dev'],
+        tasks: ['express:dev:stop','clean','6to5','express:dev'],
         options: {
           spawn: false,
         }
