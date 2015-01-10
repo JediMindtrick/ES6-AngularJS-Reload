@@ -1,19 +1,26 @@
 {
-    "main": "index.js",
-    "dependencies": {
-        "express": "*",
-        "ejs": "*",
-        "aws-sdk": "*",
-        "reload": "JediMindtrick/reload",
-        "body-parser": "*",
-        "method-override": "*"
-    },
-    "scripts": {
-        "compile": "6to5 shared --out-dir serverDist --source-maps-inline && 6to5 shared --out-dir spa/clientDist --source-maps-inline && 6to5 server --out-dir serverDist --source-maps-inline && 6to5 client --out-dir spa/clientDist --source-maps-inline",
-        "serve": "node app.js",
-        "compileAndServe": "npm run compile && npm run serve",
-        "start:all": "supervisor -e 'html|js' npm run compileAndServe",
-        "start": "npm run compileAndServe",
-        "watch": "supervisor -i 'serverDist,spa/clientDist' -x npm -e 'html|js' npm start"
-    }
+  "main": "index.js",
+  "dependencies": {
+    "express": "*",
+    "ejs": "*",
+    "aws-sdk": "*",
+    "reload": "JediMindtrick/reload",
+    "body-parser": "*",
+    "method-override": "*"
+  },
+  "scripts": {
+    "compile": "6to5 shared --out-dir serverDist --source-maps-inline && 6to5 shared --out-dir spa/clientDist --source-maps-inline && 6to5 server --out-dir serverDist --source-maps-inline && 6to5 client --out-dir spa/clientDist --source-maps-inline",
+    "serve": "node app.js",
+    "compileAndServe": "npm run compile && npm run serve",
+    "start:all": "supervisor -e 'html|js' npm run compileAndServe",
+    "start": "npm run compileAndServe",
+    "watch": "supervisor -i 'serverDist,spa/clientDist' -x npm -e 'html|js' npm start"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-6to5": "^1.0.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.7.0",
+    "load-grunt-tasks": "^0.6.0"
+  }
 }
