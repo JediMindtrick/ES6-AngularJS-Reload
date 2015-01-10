@@ -29,3 +29,4 @@ node_modules
 
 serverDist/
 spa/clientDist/
+spa/clientBuild/

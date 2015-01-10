@@ -1,5 +1,4 @@
 //this should be found on both server and client
-//foo
 //------ lib.js ------
 export const foo = 'bar';
 

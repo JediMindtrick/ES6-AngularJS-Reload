@@ -4,6 +4,11 @@
 <body ng-controller="MainCtrl">
   <h1>Your App.</h1>
   <script type="text/javascript" src="/reload/reload.js"></script>
-  <script type="text/javascript" src="./foo.js"></script>
+
+<!--When using require, during dev, use this-->
+  <script data-main="clientBuild/main" src="./vendor/require.js"></script>
+
+<!--When using browserify, use this-->
+<!--  <script type="text/javascript" src="./clientDist/app.js"></script>-->
 </body>
 </html>
