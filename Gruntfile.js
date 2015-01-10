@@ -4,6 +4,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-browserify');
+//  grunt.loadNpmTasks('grunt-simple-watch');
 
   grunt.initConfig({
 
@@ -31,7 +32,7 @@ module.exports = function(grunt) {
 
     watch:   {
       scripts: {
-        files: ['**/*.js','**/*.html','**/*.css'],
+        files: ['**/*.js','**/*.html','**/*.css','!serverDist/**','!spa/clientBuild/**','!spa/clientDist/**','!node_modules/','!**/node_modules/**'],
         tasks: ['express:dev:stop','clean','6to5:common','6to5:amd','express:dev'],
         options: {
           spawn: false,
