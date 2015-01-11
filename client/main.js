@@ -1,3 +1,3 @@
-import * as lib from './clientOnly';
-
-console.log(lib.fizz);
+import angular from 'shims/angular_shim';
+import app from 'app_module';
+angular.bootstrap(document,['app']);

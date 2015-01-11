@@ -1,12 +1,19 @@
-<html ng-app="App">
+<!--
+DON'T DO THIS when bootstrapping the app as is needed for requirejs:
+<html ng-app="app">
+-->
+<html>
 <head>
 </head>
 <body ng-controller="MainCtrl">
-  <h1>Your App!!!!!!</h1>
+  <h1>Your App</h1>
+  <h2 ng-cloak>{{name}}</h2>
   <script type="text/javascript" src="/reload/reload.js"></script>
+  <!--Traditional/vendor resources go up here, manually order script tags-->
+  <!--These will be shimmed into ES6 modules, as appropriate, and then pulled in via requirejs-->
+  <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
 
-<!--When using require, during dev, use this-->
-  <script data-main="clientBuild/main" src="./vendor/require.js"></script>
+  <script data-main="clientBuild/main" src="./bower_components/requirejs/require.js"></script>
 
 <!--When using browserify, use this-->
 <!--  <script type="text/javascript" src="./clientDist/app.js"></script>-->

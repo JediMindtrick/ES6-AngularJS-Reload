@@ -32,18 +32,27 @@ module.exports = function(grunt) {
 
     watch:   {
       scripts: {
-        files: ['**/*.js','**/*.html','**/*.css','!serverDist/**','!spa/clientBuild/**','!spa/clientDist/**','!node_modules/','!**/node_modules/**'],
-        tasks: ['express:dev:stop','clean','6to5:common','6to5:amd','express:dev'],
+        files: ['**/*.js','**/*.html','**/*.css','!serverDist/**','!spa/clientBuild/**','!spa/clientDist/**','!**/node_modules/**'],
+        tasks: ['express:dev:stop','clean:all','6to5:common','6to5:amd','clean:maps','express:dev'],
         options: {
           spawn: false,
         }
       }
     },
 
-    clean: ['serverDist','spa/clientBuild','spa/clientDist'],
+    clean: {
+        all: {
+            src: ['serverDist/**','spa/clientBuild/**','spa/clientDist/**']
+        },
+        maps: {
+            src: ['serverDist/**.map','spa/clientBuild/**.map','spa/clientDist/**.map']
+        }
+    },
+
     '6to5': {
       options: {
-        modules: 'common'
+        modules: 'common'/*,
+        sourceMap: 'inline'*/
       },
 
       common:{
@@ -80,10 +89,10 @@ module.exports = function(grunt) {
           modules: 'amd'
         },
         files: [{
-          expand: true,
-          cwd: 'shared/',
-          src: ['**/*.js'],
-          dest: 'spa/clientBuild/'
+            expand: true,
+            cwd: 'shared/',
+            src: ['**/*.js'],
+            dest: 'spa/clientBuild/'
         },
         {
           expand: true,
@@ -95,6 +104,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['clean','6to5:common','6to5:amd','express:dev','watch']);
-  grunt.registerTask('prodBuild', ['clean','6to5:common','browserify']);
+  grunt.registerTask('default', ['clean:all','6to5:common','6to5:amd','clean:maps','express:dev','watch']);
+  grunt.registerTask('prodBuild', ['clean:all','6to5:common','browserify']);
 }
