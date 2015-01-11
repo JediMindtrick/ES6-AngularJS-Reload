@@ -6,7 +6,8 @@
     "aws-sdk": "*",
     "reload": "JediMindtrick/reload",
     "body-parser": "*",
-    "method-override": "*"
+    "method-override": "*",
+    "bower": "0.9.2"
   },
   "scripts": {
     "compile": "6to5 shared --out-dir serverDist --source-maps-inline && 6to5 shared --out-dir spa/clientDist --source-maps-inline && 6to5 server --out-dir serverDist --source-maps-inline && 6to5 client --out-dir spa/clientDist --source-maps-inline",
