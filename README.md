@@ -5,4 +5,4 @@ Template project letting you write code in ES6, integrate with angular, and have
 2.  Install the library dependencies you wil need `$ npm install && bower install`
 3.  Start working with `$ grunt`
 
-Note: Don't use `sudo` with npm, instead you probably just need to change the location of npm's cache, [Explained here](https://jesse.sh/sudo-npm-install/).
+Note: Don't use `sudo` with npm, instead you probably just need to change the location of npm's cache, [explained here](https://jesse.sh/sudo-npm-install/).
