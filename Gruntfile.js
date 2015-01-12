@@ -13,7 +13,6 @@ module.exports = function(grunt) {
         src: ['spa/clientBuild/**/*.js'],
         dest: 'spa/clientDist/app.js',
         options: {
-          //external: ['jquery', 'momentWrapper'],
         }
       }
     },
@@ -32,10 +31,11 @@ module.exports = function(grunt) {
 
     watch:   {
       scripts: {
-        files: ['**/*.js','**/*.html','**/*.css','!serverDist/**','!spa/clientBuild/**','!spa/clientDist/**','!**/node_modules/**'],
+        files: ['**/*.js','**/*.html','**/*.css','!serverDist/**','!spa/clientBuild/**','!spa/clientDist/**','!**/node_modules/**','!spa/bower_components/**'],
         tasks: ['express:dev:stop','clean:all','6to5:common','6to5:amd','clean:maps','express:dev'],
         options: {
           spawn: false,
+          livereload: true
         }
       }
     },

@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded())
 app.use(express.static(path.join(__dirname, 'spa')));
 app.engine('html', require('ejs').renderFile);
 
+//foo
 //routes
 app.get('/', function(req, res) {
   res.render('index.html');
@@ -22,5 +23,4 @@ app.get('/', function(req, res) {
 var server = app.listen(8080);
 
 //add live reload functionality
-reload.all(server,app);
 console.log('listening on ' + 8080);
