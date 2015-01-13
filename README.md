@@ -9,6 +9,6 @@ Note: Don't use `sudo` with npm, instead you probably just need to change the lo
 
 Resources on ES6:
 
-http://fitzgeraldnick.com/weblog/50/
-https://github.com/lukehoban/es6features#arrows
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+* http://fitzgeraldnick.com/weblog/50/
+* https://github.com/lukehoban/es6features#arrows
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
