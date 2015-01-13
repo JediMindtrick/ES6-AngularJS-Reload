@@ -8,5 +8,7 @@ Template project letting you write code in ES6, integrate with angular, and have
 Note: Don't use `sudo` with npm, instead you probably just need to change the location of npm's cache, [explained here](https://jesse.sh/sudo-npm-install/).
 
 Resources on ES6:
+
 http://fitzgeraldnick.com/weblog/50/
 https://github.com/lukehoban/es6features#arrows
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
